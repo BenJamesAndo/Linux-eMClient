@@ -1,0 +1,181 @@
+name: eM Client
+game_slug: em-client
+version: Latest
+slug: em-client-latest
+runner: wine
+notes: Be sure to read any instructions during the installation process.
+
+script:
+  game:
+    exe: drive_c/Program Files (x86)/eM Client/MailClient.exe
+    prefix: $GAMEDIR
+    arch: win64
+
+  wine:
+    overrides:
+      windows.applicationmodel: disabled
+
+  files:
+  - installer: https://www.emclient.com/dist/latest/setup.msi
+
+  installer:
+  - input_menu:
+      description: >-
+        Download the UMU-Proton-9.0-4e Wine runner? It is required for best
+        compatibility and will be used after installation. The install itself
+        uses your default Lutris Wine runner — if it fails (e.g. with GE-Proton), go to Lutris > Preferences > Runners > Wine and set
+        the default to System Wine, then re-run this installer.
+      id: UMU
+      options:
+      - download: Download UMU-Proton-9.0-4e (recommended)
+      - skip: Skip (I already have it)
+      preselect: download
+
+  - execute:
+      description: Installing UMU-Proton-9.0-4e runner...
+      command: >-
+        [ "$INPUT_UMU" = "skip" ] || (
+        mkdir -p "$HOME/.local/share/lutris/runners/wine" &&
+        [ -d "$HOME/.local/share/lutris/runners/wine/UMU-Proton-9.0-4e" ] ||
+        curl -L "https://github.com/Open-Wine-Components/umu-proton/releases/download/UMU-Proton-9.0-4e/UMU-Proton-9.0-4e.tar.gz"
+        | tar -xz -C "$HOME/.local/share/lutris/runners/wine" )
+
+  - task:
+      name: winetricks
+      app: win81
+
+  - task:
+      name: create_prefix
+      arch: win64
+      install_gecko: false
+      install_mono: false
+
+  - task:
+      name: winetricks
+      app: corefonts
+      silent: true
+
+  # Download and install Segoe UI into the prefix
+  - execute:
+      description: Downloading Segoe UI fonts...
+      command: >-
+        cd "$GAMEDIR/drive_c/windows/Fonts" &&
+        BASE="https://github.com/mrbvrz/segoe-ui/raw/master/font" &&
+        curl -sLo segoeui.ttf   "$BASE/segoeui.ttf"   &&
+        curl -sLo segoeuib.ttf  "$BASE/segoeuib.ttf"  &&
+        curl -sLo segoeuii.ttf  "$BASE/segoeuii.ttf"  &&
+        curl -sLo segoeuiz.ttf  "$BASE/segoeuiz.ttf"  &&
+        curl -sLo segoeuil.ttf  "$BASE/segoeuil.ttf"  &&
+        curl -sLo seguili.ttf   "$BASE/seguili.ttf"   &&
+        curl -sLo segoeuisl.ttf "$BASE/segoeuisl.ttf" &&
+        curl -sLo seguisli.ttf  "$BASE/seguisli.ttf"  &&
+        curl -sLo seguisb.ttf   "$BASE/seguisb.ttf"   &&
+        curl -sLo seguisbi.ttf  "$BASE/seguisbi.ttf"  &&
+        curl -sLo seguibl.ttf   "$BASE/seguibl.ttf"   &&
+        curl -sLo seguibli.ttf  "$BASE/seguibli.ttf"  &&
+        curl -sLo seguihis.ttf  "$BASE/seguihis.ttf"  &&
+        curl -sLo seguisym.ttf  "$BASE/seguisym.ttf"  &&
+        curl -sLo seguiemj.ttf  "$BASE/seguiemj.ttf"
+
+  # Window decoration
+  - task:
+      name: set_regedit
+      path: HKEY_CURRENT_USER\Software\Wine\X11 Driver
+      key: Decorated
+      value: 'N'
+      type: REG_SZ
+
+  # Register Segoe UI font family
+  - task:
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Segoe UI (TrueType)
+      value: segoeui.ttf
+      type: REG_SZ
+  - task:
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Segoe UI Bold (TrueType)
+      value: segoeuib.ttf
+      type: REG_SZ
+  - task:
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Segoe UI Bold Italic (TrueType)
+      value: segoeuiz.ttf
+      type: REG_SZ
+  - task:
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Segoe UI Light (TrueType)
+      value: segoeuil.ttf
+      type: REG_SZ
+  - task:
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Segoe UI Light Italic (TrueType)
+      value: seguili.ttf
+      type: REG_SZ
+  - task:
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Segoe UI Semilight (TrueType)
+      value: segoeuisl.ttf
+      type: REG_SZ
+  - task:
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Segoe UI Semilight Italic (TrueType)
+      value: seguisli.ttf
+      type: REG_SZ
+  - task:
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Segoe UI Semibold (TrueType)
+      value: seguisb.ttf
+      type: REG_SZ
+  - task:
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Segoe UI Semibold Italic (TrueType)
+      value: seguisbi.ttf
+      type: REG_SZ
+  - task:
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Segoe UI Black (TrueType)
+      value: seguibl.ttf
+      type: REG_SZ
+  - task:
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Segoe UI Black Italic (TrueType)
+      value: seguibli.ttf
+      type: REG_SZ
+  - task:
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Segoe UI Historic (TrueType)
+      value: seguihis.ttf
+      type: REG_SZ
+  - task:
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Segoe UI Symbol (TrueType)
+      value: seguisym.ttf
+      type: REG_SZ
+  - task:
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Segoe UI Emoji (TrueType)
+      value: seguiemj.ttf
+      type: REG_SZ
+
+  # Install eM Client
+  - task:
+      name: wineexec
+      executable: installer
+      description: "Installing eM Client... When done, uncheck 'Set eM Client as default application', 'Run on Windows startup' and 'Launch eM Client', then click Finish."
+      args: /passive
+
+install_complete_text: Installation complete! The UMU-Proton-9.0-4e runner has been downloaded. Right-click eM Client in Lutris > Configure > Runner options > set Wine version to 'UMU-Proton-9.0-4e' before launching. You may need to click Save then right-click Configure, click save and then launch.
