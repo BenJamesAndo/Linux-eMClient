@@ -2,7 +2,16 @@
 
 Information on how to get eM Client running on Linux using WINE with license activation, fonts and file associations working.
 
-First install https://usebottles.com
+## Installation with Lutris
+
+Install [Lutris](https://lutris.net/downloads)
+Run `lutris -i https://raw.githubusercontent.com/BenJamesAndo/Linux-eMClient/refs/heads/main/em-client-lutris-installer.yaml`
+
+If installed via Flatpak run `flatpak run net.lutris.Lutris -i https://raw.githubusercontent.com/BenJamesAndo/Linux-eMClient/refs/heads/main/em-client-lutris-installer.yaml`
+
+## Installation with Bottles
+
+Install https://usebottles.com
 
 Then download https://github.com/Open-Wine-Components/umu-proton
 
