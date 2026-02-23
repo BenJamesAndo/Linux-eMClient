@@ -81,3 +81,7 @@ To work around this:
 6. Under Dependencies, install `allfonts`.
 
 7. Download the eM Client installer from https://www.emclient.com/dist/latest/setup.msi and install it inside the bottle.
+
+## Screenshot
+
+<img width="1917" height="1080" alt="eM_Client_SS" src="https://github.com/user-attachments/assets/e541b4c4-550f-4384-881b-9a16bdbc8bf2" />
