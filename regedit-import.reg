@@ -6,77 +6,77 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Fonts]
 "Segoe UI (TrueType)"="segoeui.ttf" "Segoe UI Bold (TrueType)"="segoeuib.ttf" "Segoe UI Bold Italic (TrueType)"="segoeuiz.ttf" "Segoe UI Light (TrueType)"="segoeuil.ttf" "Segoe UI Light Italic (TrueType)"="seguili.ttf" "Segoe UI Semilight (TrueType)"="segoeuisl.ttf" "Segoe UI Semilight Italic (TrueType)"="seguisli.ttf" "Segoe UI Semibold (TrueType)"="seguisb.ttf" "Segoe UI Semibold Italic (TrueType)"="seguisbi.ttf" "Segoe UI Black (TrueType)"="seguibl.ttf" "Segoe UI Black Italic (TrueType)"="seguibli.ttf" "Segoe UI Historic (TrueType)"="seguihis.ttf" "Segoe UI Symbol (TrueType)"="seguisym.ttf" "Segoe UI Emoji (TrueType)"="seguiemj.ttf" "Microsoft Sans Serif (TrueType)"="micross.ttf"
 
-[HKEY_CLASSES_ROOT.mp3]
+[HKEY_CLASSES_ROOT\.mp3]
 @="mp3file"
 [HKEY_CLASSES_ROOT\mp3file\shell\open\command]
 @=""C:\windows\system32\winebrowser.exe" "%1""
 
-[HKEY_CLASSES_ROOT.mp4]
+[HKEY_CLASSES_ROOT\.mp4]
 @="mp4file"
 [HKEY_CLASSES_ROOT\mp4file\shell\open\command]
 @=""C:\windows\system32\winebrowser.exe" "%1""
 
-[HKEY_CLASSES_ROOT.wav]
+[HKEY_CLASSES_ROOT\.wav]
 @="wavfile"
 [HKEY_CLASSES_ROOT\wavfile\shell\open\command]
 @=""C:\windows\system32\winebrowser.exe" "%1""
 
-[HKEY_CLASSES_ROOT.zip]
+[HKEY_CLASSES_ROOT\.zip]
 @="zipfile"
 [HKEY_CLASSES_ROOT\zipfile\shell\open\command]
 @=""C:\windows\system32\winebrowser.exe" "%1""
 
-[HKEY_CLASSES_ROOT.doc]
+[HKEY_CLASSES_ROOT\.doc]
 @="docfile"
 [HKEY_CLASSES_ROOT\docfile\shell\open\command]
 @=""C:\windows\system32\winebrowser.exe" "%1""
 
-[HKEY_CLASSES_ROOT.docx]
+[HKEY_CLASSES_ROOT\.docx]
 @="docxfile"
 [HKEY_CLASSES_ROOT\docxfile\shell\open\command]
 @=""C:\windows\system32\winebrowser.exe" "%1""
 
-[HKEY_CLASSES_ROOT.csv]
+[HKEY_CLASSES_ROOT\.csv]
 @="csvfile"
 [HKEY_CLASSES_ROOT\csvfile\shell\open\command]
 @=""C:\windows\system32\winebrowser.exe" "%1""
 
-[HKEY_CLASSES_ROOT.mov]
+[HKEY_CLASSES_ROOT\.mov]
 @="movfile"
 [HKEY_CLASSES_ROOT\movfile\shell\open\command]
 @=""C:\windows\system32\winebrowser.exe" "%1""
 
-[HKEY_CLASSES_ROOT.7z]
+[HKEY_CLASSES_ROOT\.7z]
 @="7zfile"
 [HKEY_CLASSES_ROOT\7zfile\shell\open\command]
 @=""C:\windows\system32\winebrowser.exe" "%1""
 
-[HKEY_CLASSES_ROOT.pdf]
+[HKEY_CLASSES_ROOT\.pdf]
 @="pdffile"
 [HKEY_CLASSES_ROOT\pdffile\shell\open\command]
 @=""C:\windows\system32\winebrowser.exe" "%1""
 
-[HKEY_CLASSES_ROOT.xls]
+[HKEY_CLASSES_ROOT\.xls]
 @="xlsfile"
 [HKEY_CLASSES_ROOT\xlsfile\shell\open\command]
 @=""C:\windows\system32\winebrowser.exe" "%1""
 
-[HKEY_CLASSES_ROOT.xlsx]
+[HKEY_CLASSES_ROOT\.xlsx]
 @="xlsxfile"
 [HKEY_CLASSES_ROOT\xlsxfile\shell\open\command]
 @=""C:\windows\system32\winebrowser.exe" "%1""
 
-[HKEY_CLASSES_ROOT.pptx]
+[HKEY_CLASSES_ROOT\.pptx]
 @="pptxfile"
 [HKEY_CLASSES_ROOT\pptxfile\shell\open\command]
 @=""C:\windows\system32\winebrowser.exe" "%1""
 
-[HKEY_CLASSES_ROOT.jpg]
+[HKEY_CLASSES_ROOT\.jpg]
 @="jpegfile"
 [HKEY_CLASSES_ROOT\jpegfile\shell\open\command]
 @=""C:\windows\system32\winebrowser.exe" "%1""
 
-[HKEY_CLASSES_ROOT.png]
+[HKEY_CLASSES_ROOT\.png]
 @="pngfile"
 [HKEY_CLASSES_ROOT\pngfile\shell\open\command]
 @=""C:\windows\system32\winebrowser.exe" "%1""
