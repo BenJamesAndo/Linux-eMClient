@@ -92,7 +92,7 @@ To work around this:
 | **WINE 11.3** | ❌ | ❌ | Neither license nor notification text displays |
 | **CrossOver** | ❌ | ❌ | Neither license nor notification text displays |
 
-Authenticating new emails within eM Client hasn't been tested much but so far adding Microsoft Work accounts doesn't work with UMU Proton but does with GE-Proton.
+Authenticating new emails within eM Client hasn't been tested much but so far adding Microsoft Work accounts doesn't work with UMU Proton but does with GE-Proton. Once added you can use whatever Runner you'd like.
 
 ## Screenshot
 
