@@ -88,10 +88,11 @@ To work around this:
 | :--- | :---: | :---: | :--- |
 | **UMU-Proton** | ✅ | ✅ | Unstable on Win Version 10/11; stable on Win 8.1 and below |
 | **Other Proton Runners** | ❌ | ✅ | License works, but no notification text |
-| **Wine-GE-Proton8-26** | ✅ | ❌ | Notifications work, but license activation fails |
+| **Wine-GE-Proton 8-26** | ✅ | ❌ | Notifications work, but license activation fails |
 | **WINE 11.3** | ❌ | ❌ | Neither license nor notification text displays |
 | **CrossOver** | ❌ | ❌ | Neither license nor notification text displays |
 
+Authenticating new emails within eM Client hasn't been tested much but so far adding Microsoft Work accounts doesn't work with UMU Proton but does with GE-Proton.
 
 ## Screenshot
 
