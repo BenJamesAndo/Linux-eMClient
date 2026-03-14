@@ -82,6 +82,8 @@ To work around this:
 
 7. Download the eM Client installer from https://www.emclient.com/dist/latest/setup.msi and install it inside the bottle.
 
+Optionally set `windows.applicationmodel` to disabled under Settings - DLL overrides to allow it to run in Windows Version 10 or 11.
+
 ## Runners Compatibility
 
 | Runner | Notification Text | License Activation | Notes |
