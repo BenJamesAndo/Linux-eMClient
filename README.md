@@ -1,3 +1,6 @@
+# Better repo
+Please see https://github.com/Chinchilla-Software-Com/em-client-wine-port for a better way to run eM Client on Linux.
+
 # eM Client for Linux
 
 eM Client can be run on Linux using Wine. This project provides a Lutris installer that handles prefix configuration, font setup, and Wine registry tweaks automatically. A manual Bottles install guide is also included below.
